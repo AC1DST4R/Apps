@@ -14,6 +14,12 @@
   </url>
 
   <url>
+    <loc>https://ac1dst4r.github.io/GitChatV1/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  
+  <url>
     <loc>https://ac1dst4r.github.io/Service-Hour-Tracker/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
@@ -26,7 +32,7 @@
   </url>
 
   <url>
-    <loc>https://ac1dst4r.github.io/C00lGUI</loc>
+    <loc>https://ac1dst4r.github.io/C00lGUI/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
@@ -67,10 +73,5 @@
     <priority>0.6</priority>
   </url>
 
-  <url>
-    <loc>https://ac1dst4r.github.io/GitChatV1/</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
 
 </urlset>
