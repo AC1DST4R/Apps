@@ -3,942 +3,139 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-
+<meta name="theme-color" content="#0d1117">
 <title>AC1D's Apps | Projects, Experiments & Tools</title>
-
-<meta name="title" content="AC1D's Apps | Projects, Experiments & Tools">
-<meta name="description" content="Projects, experiments, works in progress, and released tools created by AC1DST4R.">
+<meta name="description" content="Explore public projects, experiments, apps, games, and tools created by AC1DST4R.">
 <meta name="author" content="AC1DST4R">
-<meta name="robots" content="index, follow">
-
-<link rel="canonical" href="https://AC1DST4R.github.io/Apps/">
-
-<link rel="icon"
-      type="image/png"
-      sizes="16x16"
-      href="https://raw.githubusercontent.com/AC1DST4R/Apps/refs/heads/main/Google%20Photos/icon.jpg">
-
-<link rel="apple-touch-icon"
-      href="https://raw.githubusercontent.com/AC1DST4R/Apps/refs/heads/main/Google%20Photos/icon.jpg">
-
+<link rel="icon" href="https://raw.githubusercontent.com/AC1DST4R/Apps/refs/heads/main/Google%20Photos/icon.jpg">
+<link rel="canonical" href="https://ac1dst4r.github.io/Apps/">
 <meta property="og:type" content="website">
 <meta property="og:title" content="AC1D's Apps">
-<meta property="og:description" content="Projects, experiments, works in progress, and released tools created by AC1DST4R.">
-<meta property="og:url" content="https://AC1DST4R.github.io/Apps/">
-<meta property="og:image" content="https://raw.githubusercontent.com/AC1DST4R/Apps/refs/heads/main/Google%20Photos/preview.png">
-
-<meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="AC1D's Apps">
-<meta name="twitter:description" content="Projects, experiments, works in progress, and released tools by AC1DST4R.">
-<meta name="twitter:image" content="https://raw.githubusercontent.com/AC1DST4R/Apps/refs/heads/main/Google%20Photos/preview.png">
-
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "WebSite",
-  "name": "AC1D's Apps",
-  "url": "https://AC1DST4R.github.io/Apps/",
-  "image": "https://raw.githubusercontent.com/AC1DST4R/Apps/refs/heads/main/Google%20Photos/preview.png",
-  "author": {
-    "@type": "Person",
-    "name": "AC1DST4R"
-  }
-}
-</script>
-
+<meta property="og:description" content="Projects, experiments, works in progress, and released tools by AC1DST4R.">
+<meta property="og:url" content="https://ac1dst4r.github.io/Apps/">
 <style>
-* {
-  box-sizing: border-box;
-}
-
-html {
-  scroll-behavior: smooth;
-}
-
-body {
-  margin: 0;
-  min-height: 100vh;
-  padding: 48px 18px;
-  font-family:
-    -apple-system,
-    BlinkMacSystemFont,
-    "Segoe UI",
-    Helvetica,
-    Arial,
-    sans-serif;
-  color: #c9d1d9;
-  background:
-    radial-gradient(circle at top, #161b22 0, #0d1117 40%, #090c10 100%);
-}
-
-body::before {
-  content: "";
-  position: fixed;
-  inset: 0;
-  pointer-events: none;
-  background:
-    linear-gradient(rgba(255,255,255,.018) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(255,255,255,.018) 1px, transparent 1px);
-  background-size: 32px 32px;
-  mask-image: linear-gradient(to bottom, black, transparent);
-}
-
-.container {
-  position: relative;
-  width: 100%;
-  max-width: 850px;
-  margin: 0 auto;
-}
-
-.header {
-  margin-bottom: 42px;
-  text-align: center;
-}
-
-.header-badge {
-  display: inline-flex;
-  align-items: center;
-  gap: 7px;
-  padding: 6px 11px;
-  margin-bottom: 15px;
-  border: 1px solid #30363d;
-  border-radius: 999px;
-  background: rgba(22,27,34,.75);
-  color: #8b949e;
-  font-size: .78rem;
-  font-weight: 600;
-  letter-spacing: .08em;
-  text-transform: uppercase;
-  backdrop-filter: blur(10px);
-}
-
-.header-badge::before {
-  content: "";
-  width: 7px;
-  height: 7px;
-  border-radius: 50%;
-  background: #2ea043;
-  box-shadow: 0 0 10px rgba(46,160,67,.7);
-}
-
-.header h1 {
-  margin: 0;
-  color: #f0f6fc;
-  font-size: clamp(2rem, 6vw, 3rem);
-  letter-spacing: -.045em;
-}
-
-.header p {
-  max-width: 620px;
-  margin: 12px auto 0;
-  color: #8b949e;
-  font-size: 1rem;
-  line-height: 1.6;
-}
-
-.project-list {
-  display: grid;
-  gap: 14px;
-}
-
-.project {
-  position: relative;
-  overflow: hidden;
-  padding: 21px;
-  border: 1px solid #30363d;
-  border-radius: 14px;
-  background: rgba(22,27,34,.82);
-  box-shadow: 0 10px 30px rgba(0,0,0,.12);
-  backdrop-filter: blur(12px);
-  transition:
-    transform .18s ease,
-    border-color .18s ease,
-    box-shadow .18s ease;
-}
-
-.project::after {
-  content: "";
-  position: absolute;
-  inset: 0;
-  pointer-events: none;
-  background: linear-gradient(
-    120deg,
-    rgba(255,255,255,.035),
-    transparent 35%
-  );
-}
-
-.project:hover {
-  transform: translateY(-3px);
-  border-color: #484f58;
-  box-shadow: 0 15px 35px rgba(0,0,0,.22);
-}
-
-.project-header {
-  position: relative;
-  z-index: 1;
-  display: flex;
-  align-items: flex-start;
-  justify-content: space-between;
-  gap: 15px;
-}
-
-.project-title {
-  color: #f0f6fc;
-  font-size: 1.15rem;
-  font-weight: 650;
-  letter-spacing: -.01em;
-}
-
-.project-type {
-  flex-shrink: 0;
-  padding: 4px 8px;
-  border: 1px solid #30363d;
-  border-radius: 999px;
-  background: #0d1117;
-  color: #8b949e;
-  font-size: .7rem;
-  font-weight: 600;
-  letter-spacing: .06em;
-  text-transform: uppercase;
-}
-
-.project-desc {
-  position: relative;
-  z-index: 1;
-  max-width: 680px;
-  margin: 8px 0 17px;
-  color: #8b949e;
-  font-size: .92rem;
-  line-height: 1.55;
-}
-
-.buttons {
-  position: relative;
-  z-index: 1;
-  display: flex;
-  gap: 9px;
-  flex-wrap: wrap;
-}
-
-.btn {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  min-height: 38px;
-  padding: 8px 13px;
-  border: 1px solid #30363d;
-  border-radius: 8px;
-  background: #21262d;
-  color: #c9d1d9;
-  text-decoration: none;
-  font-size: .87rem;
-  font-weight: 550;
-  transition:
-    background .15s ease,
-    border-color .15s ease,
-    color .15s ease;
-}
-
-.btn:hover {
-  border-color: #6e7681;
-  background: #30363d;
-  color: #fff;
-}
-
-.btn.primary {
-  border-color: #238636;
-  background: #238636;
-  color: #fff;
-}
-
-.btn.primary:hover {
-  border-color: #2ea043;
-  background: #2ea043;
-}
-
-.btn.quest {
-  border-color: #8957e5;
-  background: rgba(137,87,229,.12);
-  color: #c8a8ff;
-}
-
-.btn.quest:hover {
-  border-color: #a371f7;
-  background: rgba(137,87,229,.22);
-}
-
-.footer {
-  margin-top: 40px;
-  padding-top: 22px;
-  border-top: 1px solid #21262d;
-  color: #484f58;
-  font-size: .8rem;
-  text-align: center;
-}
-
-@media (max-width: 560px) {
-  body {
-    padding: 30px 13px;
-  }
-
-  .project {
-    padding: 17px;
-  }
-
-  .project-header {
-    flex-direction: column;
-    gap: 8px;
-  }
-
-  .project-type {
-    align-self: flex-start;
-  }
-
-  .buttons {
-    flex-direction: column;
-  }
-
-  .btn {
-    width: 100%;
-  }
-}
+:root{color-scheme:dark;--bg:#0d1117;--panel:#161b22;--panel2:#1c2129;--border:#30363d;--muted:#8b949e;--text:#e6edf3;--white:#f0f6fc;--accent:#f0f6fc}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;min-height:100vh;padding:54px 22px 30px;font-family:Inter,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;color:var(--text);background:radial-gradient(ellipse at 50% -20%,#202833 0%,#0d1117 52%,#090c10 100%)}
+body:before{content:"";position:fixed;inset:0;z-index:-1;pointer-events:none;background-image:linear-gradient(#ffffff08 1px,transparent 1px),linear-gradient(90deg,#ffffff08 1px,transparent 1px);background-size:34px 34px;mask-image:linear-gradient(#000,transparent 85%)}
+a{color:inherit}
+.shell{width:min(1120px,100%);margin:auto}
+.topline{display:flex;align-items:center;justify-content:space-between;gap:18px;margin-bottom:58px}
+.brand{display:flex;align-items:center;gap:11px;text-decoration:none;font-weight:750;letter-spacing:.02em;color:var(--white)}
+.mark{display:grid;place-items:center;width:36px;height:36px;border:1px solid #484f58;border-radius:11px;background:linear-gradient(145deg,#252c36,#11161d);box-shadow:0 8px 24px #0006;font-size:13px}
+.toplink{color:var(--muted);font-size:.88rem;text-decoration:none}
+.toplink:hover{color:var(--white)}
+.hero{max-width:760px;margin:0 auto 42px;text-align:center}
+.eyebrow{display:inline-flex;align-items:center;gap:9px;padding:7px 12px;border:1px solid var(--border);border-radius:999px;background:#161b22c9;color:#aab4c0;font-size:.73rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase}
+.eyebrow:before{content:"";width:7px;height:7px;border-radius:50%;background:#f0f6fc;box-shadow:0 0 12px #f0f6fc88}
+h1{margin:20px 0 12px;color:var(--white);font-size:clamp(2.5rem,7vw,4.7rem);line-height:.98;letter-spacing:-.075em}
+.intro{max-width:620px;margin:0 auto;color:var(--muted);font-size:1rem;line-height:1.7}
+.stats{display:flex;justify-content:center;gap:10px;flex-wrap:wrap;margin-top:25px}
+.stat{padding:8px 12px;border:1px solid #30363d;border-radius:9px;background:#161b22a8;color:#9da7b3;font-size:.8rem}
+.stat strong{color:var(--white);font-variant-numeric:tabular-nums}
+.toolbar{display:flex;gap:12px;align-items:center;margin:0 0 18px}
+.searchwrap{position:relative;flex:1}
+.searchwrap:before{content:"⌕";position:absolute;left:14px;top:8px;color:#7d8590;font-size:22px;pointer-events:none}
+#search{width:100%;height:44px;padding:0 14px 0 42px;border:1px solid var(--border);border-radius:10px;outline:none;background:#0d1117cc;color:var(--white);font:inherit;font-size:.9rem;transition:border-color .2s,box-shadow .2s}
+#search:focus{border-color:#6e7681;box-shadow:0 0 0 3px #8b949e20}
+#filter{height:44px;padding:0 13px;border:1px solid var(--border);border-radius:10px;background:#161b22;color:var(--text);font:inherit;font-size:.87rem}
+.grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:13px}
+.card{position:relative;display:flex;flex-direction:column;min-height:205px;padding:19px;border:1px solid var(--border);border-radius:13px;background:linear-gradient(145deg,#1b222c,#141920);box-shadow:0 12px 32px #0002;transition:transform .18s,border-color .18s,background .18s}
+.card:hover{transform:translateY(-3px);border-color:#626b76;background:linear-gradient(145deg,#222b36,#171d25)}
+.cardtop{display:flex;align-items:flex-start;justify-content:space-between;gap:10px}
+.card h2{margin:0;color:var(--white);font-size:1.02rem;line-height:1.35;letter-spacing:-.02em;overflow-wrap:anywhere}
+.type{flex:none;padding:4px 8px;border:1px solid #3b424c;border-radius:999px;color:#aab4c0;background:#0d1117;font-size:.66rem;font-weight:650;letter-spacing:.06em;text-transform:uppercase}
+.desc{margin:12px 0 18px;color:var(--muted);font-size:.85rem;line-height:1.55;flex:1}
+.actions{display:flex;gap:8px;flex-wrap:wrap}
+.btn{display:inline-flex;align-items:center;justify-content:center;min-height:34px;padding:7px 11px;border:1px solid #3b424c;border-radius:8px;background:#21262d;color:#c9d1d9;text-decoration:none;font-size:.78rem;font-weight:650;transition:background .15s,border-color .15s}
+.btn:hover{border-color:#7d8590;background:#30363d;color:#fff}
+.btn.primary{background:#e6edf3;border-color:#e6edf3;color:#0d1117}
+.btn.primary:hover{background:#fff;border-color:#fff}
+.empty{display:none;padding:42px 20px;border:1px dashed #3b424c;border-radius:12px;color:var(--muted);text-align:center}
+.footer{margin-top:42px;padding-top:22px;border-top:1px solid #21262d;color:#6e7681;text-align:center;font-size:.78rem}
+@media(max-width:850px){.grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:560px){body{padding:26px 14px}.topline{margin-bottom:42px}.toolbar{align-items:stretch;flex-direction:column}.grid{grid-template-columns:1fr}.card{min-height:175px}.hero{margin-bottom:32px}h1{letter-spacing:-.06em}}
 </style>
 </head>
-
 <body>
-
-<div class="container">
-
-<header class="header">
-  <div class="header-badge">AC1DST4R</div>
-
-  <h1>Active Apps</h1>
-
-  <p>
-    Projects, experiments, works in progress, and released tools.
-    Built, tested, and maintained by AC1DST4R.
-  </p>
-</header>
-
-<main class="project-list">
-
-  <!-- 90 -->
-  <article class="project">
-    <div class="project-header">
-      <div class="project-title">90</div>
-      <div class="project-type">Game</div>
-    </div>
-
-    <div class="project-desc">
-      A browser-based A-90 experience featuring warnings,
-      stillness detection, attacks, and jumpscare mechanics.
-    </div>
-
-    <div class="buttons">
-      <a class="btn"
-         href="https://github.com/AC1DST4R/90"
-         target="_blank"
-         rel="noopener">
-        Repository
-      </a>
-
-      <a class="btn primary"
-         href="https://AC1DST4R.github.io/90/"
-         target="_blank"
-         rel="noopener">
-        Website
-      </a>
-    </div>
-  </article>
-
-  <!-- A90B -->
-  <article class="project">
-    <div class="project-header">
-      <div class="project-title">A90B</div>
-      <div class="project-type">Quest 3 VR</div>
-    </div>
-
-    <div class="project-desc">
-      A Meta Quest 3 exclusive immersive adaptation of A-90b,
-      built around passthrough VR and mixed-reality immersion.
-    </div>
-
-    <div class="buttons">
-      <a class="btn"
-         href="https://github.com/AC1DST4R/a90b"
-         target="_blank"
-         rel="noopener">
-        Repository
-      </a>
-
-      <a class="btn quest"
-         href="https://AC1DST4R.github.io/a90b/"
-         target="_blank"
-         rel="noopener">
-        Website
-      </a>
-    </div>
-  </article>
-
-  <!-- Audio Visualizer -->
-  <article class="project">
-    <div class="project-header">
-      <div class="project-title">Audio Visualizer</div>
-      <div class="project-type">Tool</div>
-    </div>
-
-    <div class="project-desc">
-      A simple real-time audio visualizer and oscilloscope experiment.
-    </div>
-
-    <div class="buttons">
-      <a class="btn"
-         href="https://github.com/AC1DST4R/Audio-Visualizer"
-         target="_blank"
-         rel="noopener">
-        Repository
-      </a>
-
-      <a class="btn primary"
-         href="https://AC1DST4R.github.io/Audio-Visualizer/"
-         target="_blank"
-         rel="noopener">
-        Website
-      </a>
-    </div>
-  </article>
-
-  <!-- Autoclear History -->
-  <article class="project">
-    <div class="project-header">
-      <div class="project-title">Autoclear History Extension v1.2</div>
-      <div class="project-type">Firefox</div>
-    </div>
-
-    <div class="project-desc">
-      A browser extension that automatically clears browsing history.
-    </div>
-
-    <div class="buttons">
-      <a class="btn"
-         href="https://github.com/AC1DST4R/History-Autoclear-Extension-V1.2"
-         target="_blank"
-         rel="noopener">
-        Repository
-      </a>
-
-      <a class="btn primary"
-         href="https://addons.mozilla.org/en-US/firefox/addon/ac1d-s-auto-history-clearer/"
-         target="_blank"
-         rel="noopener">
-        Extension
-      </a>
-
-      <a class="btn"
-         href="https://AC1DST4R.github.io/History-Autoclear-Extension-V1.2/"
-         target="_blank"
-         rel="noopener">
-        Website
-      </a>
-    </div>
-  </article>
-
-  <!-- Beginner HTML Sandbox -->
-  <article class="project">
-    <div class="project-header">
-      <div class="project-title">Beginner HTML Sandbox</div>
-      <div class="project-type">Sandbox</div>
-    </div>
-
-    <div class="project-desc">
-      A sandbox for testing ideas, features, experiments,
-      and random web development concepts.
-    </div>
-
-    <div class="buttons">
-      <a class="btn"
-         href="https://github.com/AC1DST4R/Code-Sandbox/tree/main"
-         target="_blank"
-         rel="noopener">
-        Repository
-      </a>
-
-      <a class="btn primary"
-         href="https://AC1DST4R.github.io/Code-Sandbox/"
-         target="_blank"
-         rel="noopener">
-        Website
-      </a>
-    </div>
-  </article>
-
-  <!-- Black Knife -->
-  <article class="project">
-    <div class="project-header">
-      <div class="project-title">Black_Knife</div>
-      <div class="project-type">Project</div>
-    </div>
-
-    <div class="project-desc">
-      An experimental project currently under development.
-    </div>
-
-    <div class="buttons">
-      <a class="btn"
-         href="https://github.com/AC1DST4R/Black_Knife"
-         target="_blank"
-         rel="noopener">
-        Repository
-      </a>
-
-      <a class="btn primary"
-         href="https://AC1DST4R.github.io/Black_Knife/"
-         target="_blank"
-         rel="noopener">
-        Website
-      </a>
-    </div>
-  </article>
-
-  <!-- C00lGUI -->
-  <article class="project">
-    <div class="project-header">
-      <div class="project-title">C00lGUI v9 Reimagined</div>
-      <div class="project-type">Project</div>
-    </div>
-
-    <div class="project-desc">
-      An emulation close to the original C00lGUI with
-      additional functionality and improvements.
-    </div>
-
-    <div class="buttons">
-      <a class="btn"
-         href="https://github.com/AC1DST4R/C00lGUI"
-         target="_blank"
-         rel="noopener">
-        Repository
-      </a>
-
-      <a class="btn primary"
-         href="https://AC1DST4R.github.io/C00lGUI/"
-         target="_blank"
-         rel="noopener">
-        Website
-      </a>
-    </div>
-  </article>
-
-  <!-- Camera Pro -->
-  <article class="project">
-    <div class="project-header">
-      <div class="project-title">Camera-Pro-v2</div>
-      <div class="project-type">Tool</div>
-    </div>
-
-    <div class="project-desc">
-      Camera Pro v2, a browser-based camera project.
-    </div>
-
-    <div class="buttons">
-      <a class="btn"
-         href="https://github.com/AC1DST4R/Camera-Pro-v2"
-         target="_blank"
-         rel="noopener">
-        Repository
-      </a>
-
-      <a class="btn primary"
-         href="https://AC1DST4R.github.io/Camera-Pro-v2/"
-         target="_blank"
-         rel="noopener">
-        Website
-      </a>
-    </div>
-  </article>
-
-  <!-- Downloads -->
-  <article class="project">
-    <div class="project-header">
-      <div class="project-title">Downloads</div>
-      <div class="project-type">Project</div>
-    </div>
-
-    <div class="project-desc">
-      A collection and download hub for AC1DST4R projects and files.
-    </div>
-
-    <div class="buttons">
-      <a class="btn"
-         href="https://github.com/AC1DST4R/Downloads"
-         target="_blank"
-         rel="noopener">
-        Repository
-      </a>
-
-      <a class="btn primary"
-         href="https://AC1DST4R.github.io/Downloads/"
-         target="_blank"
-         rel="noopener">
-        Website
-      </a>
-    </div>
-  </article>
-
-  <!-- File Encoder V2 -->
-  <article class="project">
-    <div class="project-header">
-      <div class="project-title">FileEncoderV2</div>
-      <div class="project-type">Tool</div>
-    </div>
-
-    <div class="project-desc">
-      The second version of the custom file encoder and decoder project.
-    </div>
-
-    <div class="buttons">
-      <a class="btn"
-         href="https://github.com/AC1DST4R/FileEncoderV2"
-         target="_blank"
-         rel="noopener">
-        Repository
-      </a>
-
-      <a class="btn primary"
-         href="https://AC1DST4R.github.io/FileEncoderV2/"
-         target="_blank"
-         rel="noopener">
-        Website
-      </a>
-    </div>
-  </article>
-
-  <!-- File Extension Creator -->
-  <article class="project">
-    <div class="project-header">
-      <div class="project-title">File Extension Creator</div>
-      <div class="project-type">Tool</div>
-    </div>
-
-    <div class="project-desc">
-      Create and download files with custom extensions instantly.
-    </div>
-
-    <div class="buttons">
-      <a class="btn"
-         href="https://github.com/AC1DST4R/File-Creator"
-         target="_blank"
-         rel="noopener">
-        Repository
-      </a>
-
-      <a class="btn primary"
-         href="https://AC1DST4R.github.io/File-Creator/"
-         target="_blank"
-         rel="noopener">
-        Website
-      </a>
-    </div>
-  </article>
-
-  <!-- GitChat -->
-  <article class="project">
-    <div class="project-header">
-      <div class="project-title">GitChat v1</div>
-      <div class="project-type">App</div>
-    </div>
-
-    <div class="project-desc">
-      A lightweight web-based chat application.
-    </div>
-
-    <div class="buttons">
-      <a class="btn"
-         href="https://github.com/AC1DST4R/GitChatV1"
-         target="_blank"
-         rel="noopener">
-        Repository
-      </a>
-
-      <a class="btn primary"
-         href="https://AC1DST4R.github.io/GitChatV1/"
-         target="_blank"
-         rel="noopener">
-        Website
-      </a>
-    </div>
-  </article>
-
-  <!-- Graphite -->
-  <article class="project">
-    <div class="project-header">
-      <div class="project-title">Graphite v1.0</div>
-      <div class="project-type">Firefox</div>
-    </div>
-
-    <div class="project-desc">
-      A dark Graphite-inspired theme for Firefox.
-    </div>
-
-    <div class="buttons">
-      <a class="btn"
-         href="https://github.com/AC1DST4R/Graphite-v1.0"
-         target="_blank"
-         rel="noopener">
-        Repository
-      </a>
-
-      <a class="btn primary"
-         href="https://addons.mozilla.org/en-US/firefox/addon/graphite_v1/"
-         target="_blank"
-         rel="noopener">
-        Extension
-      </a>
-
-      <a class="btn"
-         href="https://AC1DST4R.github.io/Graphite-v1.0/"
-         target="_blank"
-         rel="noopener">
-        Website
-      </a>
-    </div>
-  </article>
-
-  <!-- Memorizebyheart -->
-  <article class="project">
-    <div class="project-header">
-      <div class="project-title">Memorizebyheart</div>
-      <div class="project-type">Web App</div>
-    </div>
-
-    <div class="project-desc">
-      A feature-rich memorization and study experience.
-    </div>
-
-    <div class="buttons">
-      <a class="btn"
-         href="https://github.com/AC1DST4R/Memorizebyheart"
-         target="_blank"
-         rel="noopener">
-        Repository
-      </a>
-
-      <a class="btn primary"
-         href="https://AC1DST4R.github.io/Memorizebyheart/"
-         target="_blank"
-         rel="noopener">
-        Website
-      </a>
-    </div>
-  </article>
-
-  <!-- Minecraft -->
-  <article class="project">
-    <div class="project-header">
-      <div class="project-title">Minecraft</div>
-      <div class="project-type">Web Port</div>
-    </div>
-
-    <div class="project-desc">
-      An educational browser port of Minecraft from Eaglercraft.
-    </div>
-
-    <div class="buttons">
-      <a class="btn"
-         href="https://github.com/AC1DST4R/Minecraft/"
-         target="_blank"
-         rel="noopener">
-        Repository
-      </a>
-
-      <a class="btn primary"
-         href="https://AC1DST4R.github.io/Minecraft/"
-         target="_blank"
-         rel="noopener">
-        Website
-      </a>
-    </div>
-  </article>
-
-  <!-- MineSwept -->
-  <article class="project">
-    <div class="project-header">
-      <div class="project-title">MineSwept</div>
-      <div class="project-type">Game</div>
-    </div>
-
-    <div class="project-desc">
-      A Minesweeper-inspired browser game with additional
-      mechanics and experiments.
-    </div>
-
-    <div class="buttons">
-      <a class="btn"
-         href="https://github.com/AC1DST4R/MineSwept"
-         target="_blank"
-         rel="noopener">
-        Repository
-      </a>
-
-      <a class="btn primary"
-         href="https://AC1DST4R.github.io/MineSwept/"
-         target="_blank"
-         rel="noopener">
-        Website
-      </a>
-    </div>
-  </article>
-
-  <!-- Service Hour Tracker -->
-  <article class="project">
-    <div class="project-header">
-      <div class="project-title">Service Hour Tracker</div>
-      <div class="project-type">Tool</div>
-    </div>
-
-    <div class="project-desc">
-      A simple web tool for tracking, managing, and calculating
-      service hours.
-    </div>
-
-    <div class="buttons">
-      <a class="btn"
-         href="https://github.com/AC1DST4R/Service-Hour-Tracker"
-         target="_blank"
-         rel="noopener">
-        Repository
-      </a>
-
-      <a class="btn primary"
-         href="https://AC1DST4R.github.io/Service-Hour-Tracker/"
-         target="_blank"
-         rel="noopener">
-        Website
-      </a>
-    </div>
-  </article>
-
-  <!-- Super Awesome Clicker Game -->
-  <article class="project">
-    <div class="project-header">
-      <div class="project-title">Super-Aw3some-clicker-game</div>
-      <div class="project-type">Game</div>
-    </div>
-
-    <div class="project-desc">
-      A simple browser-based clicker game.
-    </div>
-
-    <div class="buttons">
-      <a class="btn"
-         href="https://github.com/AC1DST4R/Super-Aw3some-clicker-game"
-         target="_blank"
-         rel="noopener">
-        Repository
-      </a>
-
-      <a class="btn primary"
-         href="https://AC1DST4R.github.io/Super-Aw3some-clicker-game/"
-         target="_blank"
-         rel="noopener">
-        Website
-      </a>
-    </div>
-  </article>
-
-  <!-- Web Ports -->
-  <article class="project">
-    <div class="project-header">
-      <div class="project-title">Web Ports</div>
-      <div class="project-type">Collection</div>
-    </div>
-
-    <div class="project-desc">
-      A collection of browser ports originally hosted through gn-math.
-    </div>
-
-    <div class="buttons">
-      <a class="btn"
-         href="https://github.com/AC1DST4R/Web-Ports"
-         target="_blank"
-         rel="noopener">
-        Repository
-      </a>
-
-      <a class="btn primary"
-         href="https://AC1DST4R.github.io/Web-Ports/"
-         target="_blank"
-         rel="noopener">
-        Website
-      </a>
-    </div>
-  </article>
-
-  <!-- Webhook'd -->
-  <article class="project">
-    <div class="project-header">
-      <div class="project-title">Webhook'd</div>
-      <div class="project-type">Discord Tool</div>
-    </div>
-
-    <div class="project-desc">
-      Send messages and embeds through Discord webhooks
-      from a simple interface.
-    </div>
-
-    <div class="buttons">
-      <a class="btn"
-         href="https://github.com/AC1DST4R/Webhooked"
-         target="_blank"
-         rel="noopener">
-        Repository
-      </a>
-
-      <a class="btn primary"
-         href="https://AC1DST4R.github.io/Webhooked/"
-         target="_blank"
-         rel="noopener">
-        Website
-      </a>
-    </div>
-  </article>
-
-  <!-- Website Down Detector -->
-  <article class="project">
-    <div class="project-header">
-      <div class="project-title">Website-Down-Detector</div>
-      <div class="project-type">Utility</div>
-    </div>
-
-    <div class="project-desc">
-      A down detector for the websites hosted and maintained by AC1DST4R.
-    </div>
-
-    <div class="buttons">
-      <a class="btn"
-         href="https://github.com/AC1DST4R/Website-Down-Detector"
-         target="_blank"
-         rel="noopener">
-        Repository
-      </a>
-
-      <a class="btn primary"
-         href="https://AC1DST4R.github.io/Website-Down-Detector/"
-         target="_blank"
-         rel="noopener">
-        Website
-      </a>
-    </div>
-  </article>
-
-</main>
-
-<footer class="footer">
-  AC1DST4R · Projects, experiments & tools
-</footer>
-
+<div class="shell">
+  <nav class="topline">
+    <a class="brand" href="https://ac1dst4r.github.io/"><span class="mark">A</span><span>AC1DST4R</span></a>
+    <a class="toplink" href="https://github.com/AC1DST4R" target="_blank" rel="noopener">GitHub profile ↗</a>
+  </nav>
+  <header class="hero">
+    <div class="eyebrow">Independent projects</div>
+    <h1>Apps & Projects</h1>
+    <p class="intro">A living collection of software, experiments, games, tools, and things currently taking shape. Built and maintained by AC1DST4R.</p>
+    <div class="stats"><span class="stat"><strong id="count">55</strong> public projects</span><span class="stat">No paywalls</span><span class="stat">No advertisements</span></div>
+  </header>
+  <section class="toolbar" aria-label="Project filters">
+    <div class="searchwrap"><input id="search" type="search" placeholder="Search projects and repositories..." autocomplete="off" aria-label="Search projects"></div>
+    <select id="filter" aria-label="Filter by type"><option value="all">All types</option></select>
+  </section>
+  <main class="grid" id="projects"></main>
+  <div class="empty" id="empty">No projects match that search.</div>
+  <footer class="footer">AC1DST4R · Projects, experiments & tools · <a href="https://github.com/AC1DST4R" target="_blank" rel="noopener">GitHub</a></footer>
 </div>
-
+<script>
+const projects = [{"name":".acid-file-encryptor","title":".Acid File Encryptor","type":"Project","desc":"A public repository by AC1DST4R.","repo":"https://github.com/AC1DST4R/.acid-file-encryptor","links":[]},{"name":"3rd-Party-Camera","title":"3rd Party Camera","type":"Tool","desc":"A public repository by AC1DST4R.","repo":"https://github.com/AC1DST4R/3rd-Party-Camera","links":[]},{"name":"90","title":"90","type":"Game","desc":"A browser-based A-90 experience featuring warnings, stillness detection, attacks, and jumpscare mechanics.","repo":"https://github.com/AC1DST4R/90","links":[{"url":"https://AC1DST4R.github.io/90/","label":"Website"}]},{"name":"A-Message-For-You","title":"A Message For You","type":"Project","desc":"A public repository by AC1DST4R.","repo":"https://github.com/AC1DST4R/A-Message-For-You","links":[]},{"name":"a90b","title":"A90B","type":"Quest 3 VR","desc":"A Meta Quest 3 exclusive immersive adaptation of A-90b, built around passthrough VR and mixed-reality immersion.","repo":"https://github.com/AC1DST4R/a90b","links":[{"url":"https://AC1DST4R.github.io/a90b/","label":"Website"}]},{"name":"ADB-Config","title":"ADB Config","type":"Tool","desc":"A public repository by AC1DST4R.","repo":"https://github.com/AC1DST4R/ADB-Config","links":[]},{"name":"ADC","title":"ADC","type":"Project","desc":"A public repository by AC1DST4R.","repo":"https://github.com/AC1DST4R/ADC","links":[]},{"name":"Audio-Visualizer","title":"Audio Visualizer","type":"Tool","desc":"A simple real-time audio visualizer and oscilloscope experiment.","repo":"https://github.com/AC1DST4R/Audio-Visualizer","links":[{"url":"https://AC1DST4R.github.io/Audio-Visualizer/","label":"Website"}]},{"name":"History-Autoclear-Extension-V1.2","title":"Autoclear History Extension v1.2","type":"Firefox","desc":"A browser extension that automatically clears browsing history.","repo":"https://github.com/AC1DST4R/History-Autoclear-Extension-V1.2","links":[{"url":"https://addons.mozilla.org/en-US/firefox/addon/ac1d-s-auto-history-clearer/","label":"Extension"},{"url":"https://AC1DST4R.github.io/History-Autoclear-Extension-V1.2/","label":"Website"}]},{"name":"Black_Knife","title":"Black_Knife","type":"Project","desc":"An experimental project currently under development.","repo":"https://github.com/AC1DST4R/Black_Knife","links":[{"url":"https://AC1DST4R.github.io/Black_Knife/","label":"Website"}]},{"name":"C00lGUI","title":"C00lGUI v9 Reimagined","type":"Project","desc":"An emulation close to the original C00lGUI with additional functionality and improvements.","repo":"https://github.com/AC1DST4R/C00lGUI","links":[{"url":"https://AC1DST4R.github.io/C00lGUI/","label":"Website"}]},{"name":"Camera-app-extension-v3.0","title":"Camera App Extension V3.0","type":"Tool","desc":"A public repository by AC1DST4R.","repo":"https://github.com/AC1DST4R/Camera-app-extension-v3.0","links":[]},{"name":"Camera-Pro-v2","title":"Camera-Pro-v2","type":"Tool","desc":"Camera Pro v2, a browser-based camera project.","repo":"https://github.com/AC1DST4R/Camera-Pro-v2","links":[{"url":"https://AC1DST4R.github.io/Camera-Pro-v2/","label":"Website"}]},{"name":"Chapel-Reporting","title":"Chapel Reporting","type":"Project","desc":"A public repository by AC1DST4R.","repo":"https://github.com/AC1DST4R/Chapel-Reporting","links":[]},{"name":"Clock","title":"Clock","type":"Tool","desc":"A public repository by AC1DST4R.","repo":"https://github.com/AC1DST4R/Clock","links":[]},{"name":"Code-Sandbox","title":"Code Sandbox","type":"Project","desc":"A public repository by AC1DST4R.","repo":"https://github.com/AC1DST4R/Code-Sandbox","links":[]},{"name":"CTGP-7","title":"CTGP 7","type":"Game","desc":"A public repository by AC1DST4R.","repo":"https://github.com/AC1DST4R/CTGP-7","links":[]},{"name":"Dev-Notes","title":"Dev Notes","type":"Resource","desc":"A public repository by AC1DST4R.","repo":"https://github.com/AC1DST4R/Dev-Notes","links":[]},{"name":"Doggify","title":"Doggify","type":"Project","desc":"A public repository by AC1DST4R.","repo":"https://github.com/AC1DST4R/Doggify","links":[]},{"name":"Downloads","title":"Downloads","type":"Project","desc":"A collection and download hub for AC1DST4R projects and files.","repo":"https://github.com/AC1DST4R/Downloads","links":[{"url":"https://AC1DST4R.github.io/Downloads/","label":"Website"}]},{"name":"File-Encrypt-V2","title":"File Encrypt V2","type":"Project","desc":"A public repository by AC1DST4R.","repo":"https://github.com/AC1DST4R/File-Encrypt-V2","links":[]},{"name":"File-Creator","title":"File Extension Creator","type":"Tool","desc":"Create and download files with custom extensions instantly.","repo":"https://github.com/AC1DST4R/File-Creator","links":[{"url":"https://AC1DST4R.github.io/File-Creator/","label":"Website"}]},{"name":"FileEncoderV2","title":"FileEncoderV2","type":"Tool","desc":"The second version of the custom file encoder and decoder project.","repo":"https://github.com/AC1DST4R/FileEncoderV2","links":[{"url":"https://AC1DST4R.github.io/FileEncoderV2/","label":"Website"}]},{"name":"FiletreeBuilder","title":"FiletreeBuilder","type":"Resource","desc":"A public repository by AC1DST4R.","repo":"https://github.com/AC1DST4R/FiletreeBuilder","links":[]},{"name":"GD","title":"GD","type":"Game","desc":"A public repository by AC1DST4R.","repo":"https://github.com/AC1DST4R/GD","links":[]},{"name":"GitChatV1","title":"GitChat v1","type":"App","desc":"A lightweight web-based chat application.","repo":"https://github.com/AC1DST4R/GitChatV1","links":[{"url":"https://AC1DST4R.github.io/GitChatV1/","label":"Website"}]},{"name":"GitChatV2","title":"GitChatV2","type":"App","desc":"A public repository by AC1DST4R.","repo":"https://github.com/AC1DST4R/GitChatV2","links":[]},{"name":"GitChatV2-Development","title":"GitChatV2 Development","type":"App","desc":"A public repository by AC1DST4R.","repo":"https://github.com/AC1DST4R/GitChatV2-Development","links":[]},{"name":"Github-Bulk-Update","title":"Github Bulk Update","type":"Tool","desc":"A public repository by AC1DST4R.","repo":"https://github.com/AC1DST4R/Github-Bulk-Update","links":[]},{"name":"Graphite-v1.0","title":"Graphite v1.0","type":"Firefox","desc":"A dark Graphite-inspired theme for Firefox.","repo":"https://github.com/AC1DST4R/Graphite-v1.0","links":[{"url":"https://addons.mozilla.org/en-US/firefox/addon/graphite_v1/","label":"Extension"},{"url":"https://AC1DST4R.github.io/Graphite-v1.0/","label":"Website"}]},{"name":"Landing","title":"Landing","type":"App","desc":"A public repository by AC1DST4R.","repo":"https://github.com/AC1DST4R/Landing","links":[]},{"name":"Memorizebyheart","title":"Memorizebyheart","type":"Web App","desc":"A feature-rich memorization and study experience.","repo":"https://github.com/AC1DST4R/Memorizebyheart","links":[{"url":"https://AC1DST4R.github.io/Memorizebyheart/","label":"Website"}]},{"name":"Minecraft","title":"Minecraft","type":"Web Port","desc":"An educational browser port of Minecraft from Eaglercraft.","repo":"https://github.com/AC1DST4R/Minecraft","links":[{"url":"https://AC1DST4R.github.io/Minecraft/","label":"Website"}]},{"name":"MineSwept","title":"MineSwept","type":"Game","desc":"A Minesweeper-inspired browser game with additional mechanics and experiments.","repo":"https://github.com/AC1DST4R/MineSwept","links":[{"url":"https://AC1DST4R.github.io/MineSwept/","label":"Website"}]},{"name":"MUSIC","title":"MUSIC","type":"App","desc":"A public repository by AC1DST4R.","repo":"https://github.com/AC1DST4R/MUSIC","links":[]},{"name":"NT-GENERATOR","title":"NT GENERATOR","type":"Tool","desc":"A public repository by AC1DST4R.","repo":"https://github.com/AC1DST4R/NT-GENERATOR","links":[]},{"name":"OnlinePatcher","title":"OnlinePatcher","type":"Tool","desc":"A public repository by AC1DST4R.","repo":"https://github.com/AC1DST4R/OnlinePatcher","links":[]},{"name":"orderanindian.com","title":"Orderanindian.Com","type":"Project","desc":"A public repository by AC1DST4R.","repo":"https://github.com/AC1DST4R/orderanindian.com","links":[]},{"name":"Plinko","title":"Plinko","type":"Game","desc":"A public repository by AC1DST4R.","repo":"https://github.com/AC1DST4R/Plinko","links":[]},{"name":"profilecreator-web","title":"Profilecreator Web","type":"Tool","desc":"A public repository by AC1DST4R.","repo":"https://github.com/AC1DST4R/profilecreator-web","links":[]},{"name":"PS3-Jailbreak-File-Guide","title":"PS3 Jailbreak File Guide","type":"Resource","desc":"A public repository by AC1DST4R.","repo":"https://github.com/AC1DST4R/PS3-Jailbreak-File-Guide","links":[]},{"name":"Readmephotos","title":"Readmephotos","type":"Resource","desc":"A public repository by AC1DST4R.","repo":"https://github.com/AC1DST4R/Readmephotos","links":[]},{"name":"Service-Hour-Tracker","title":"Service Hour Tracker","type":"Tool","desc":"A simple web tool for tracking, managing, and calculating service hours.","repo":"https://github.com/AC1DST4R/Service-Hour-Tracker","links":[{"url":"https://AC1DST4R.github.io/Service-Hour-Tracker/","label":"Website"}]},{"name":"Sin","title":"Sin","type":"Project","desc":"A public repository by AC1DST4R.","repo":"https://github.com/AC1DST4R/Sin","links":[]},{"name":"Soundcloud","title":"Soundcloud","type":"App","desc":"A public repository by AC1DST4R.","repo":"https://github.com/AC1DST4R/Soundcloud","links":[]},{"name":"StarlightAI","title":"StarlightAI","type":"App","desc":"A public repository by AC1DST4R.","repo":"https://github.com/AC1DST4R/StarlightAI","links":[]},{"name":"Super-Aw3some-clicker-game","title":"Super-Aw3some-clicker-game","type":"Game","desc":"A simple browser-based clicker game.","repo":"https://github.com/AC1DST4R/Super-Aw3some-clicker-game","links":[{"url":"https://AC1DST4R.github.io/Super-Aw3some-clicker-game/","label":"Website"}]},{"name":"Support","title":"Support","type":"Tool","desc":"A public repository by AC1DST4R.","repo":"https://github.com/AC1DST4R/Support","links":[]},{"name":"WallpaperCreator","title":"WallpaperCreator","type":"Tool","desc":"A public repository by AC1DST4R.","repo":"https://github.com/AC1DST4R/WallpaperCreator","links":[]},{"name":"Wallpapers","title":"Wallpapers","type":"Resource","desc":"A public repository by AC1DST4R.","repo":"https://github.com/AC1DST4R/Wallpapers","links":[]},{"name":"Web-Ports","title":"Web Ports","type":"Collection","desc":"A collection of browser ports originally hosted through gn-math.","repo":"https://github.com/AC1DST4R/Web-Ports","links":[{"url":"https://AC1DST4R.github.io/Web-Ports/","label":"Website"}]},{"name":"Webhooked","title":"Webhook'd","type":"Discord Tool","desc":"Send messages and embeds through Discord webhooks from a simple interface.","repo":"https://github.com/AC1DST4R/Webhooked","links":[{"url":"https://AC1DST4R.github.io/Webhooked/","label":"Website"}]},{"name":"Website-Down-Detector","title":"Website-Down-Detector","type":"Utility","desc":"A down detector for the websites hosted and maintained by AC1DST4R.","repo":"https://github.com/AC1DST4R/Website-Down-Detector","links":[{"url":"https://AC1DST4R.github.io/Website-Down-Detector/","label":"Website"}]},{"name":"Wii-U-Jailbreaks","title":"Wii U Jailbreaks","type":"Resource","desc":"A public repository by AC1DST4R.","repo":"https://github.com/AC1DST4R/Wii-U-Jailbreaks","links":[]},{"name":"Wiki","title":"Wiki","type":"Resource","desc":"A public repository by AC1DST4R.","repo":"https://github.com/AC1DST4R/Wiki","links":[]}];
+const grid = document.getElementById("projects");
+const search = document.getElementById("search");
+const filter = document.getElementById("filter");
+const empty = document.getElementById("empty");
+const count = document.getElementById("count");
+const types = [...new Set(projects.map(project => project.type))].sort();
+types.forEach(type => {
+  const option = document.createElement("option");
+  option.value = type;
+  option.textContent = type;
+  filter.appendChild(option);
+});
+function makeLink(url,label,primary=false){
+  const link=document.createElement("a");
+  link.className=primary?"btn primary":"btn";
+  link.href=url;
+  link.target="_blank";
+  link.rel="noopener noreferrer";
+  link.textContent=label;
+  return link;
+}
+function render(){
+  const query=search.value.trim().toLowerCase();
+  const selected=filter.value;
+  const visible=projects.filter(project=>
+    (selected==="all"||project.type===selected) &&
+    [project.title,project.name,project.desc,project.type].join(" ").toLowerCase().includes(query)
+  );
+  grid.replaceChildren();
+  visible.forEach(project=>{
+    const card=document.createElement("article");
+    card.className="card";
+    const top=document.createElement("div");
+    top.className="cardtop";
+    const heading=document.createElement("h2");
+    heading.textContent=project.title;
+    const type=document.createElement("span");
+    type.className="type";
+    type.textContent=project.type;
+    top.append(heading,type);
+    const desc=document.createElement("p");
+    desc.className="desc";
+    desc.textContent=project.desc;
+    const actions=document.createElement("div");
+    actions.className="actions";
+    actions.appendChild(makeLink(project.repo,"Repository"));
+    project.links.forEach(item=>actions.appendChild(makeLink(item.url,item.label,item.label==="Website")));
+    card.append(top,desc,actions);
+    grid.appendChild(card);
+  });
+  count.textContent=visible.length+" / "+projects.length;
+  empty.style.display=visible.length?"none":"block";
+}
+search.addEventListener("input",render);
+filter.addEventListener("change",render);
+render();
+</script>
 </body>
 </html>
